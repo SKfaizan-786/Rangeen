@@ -1,0 +1,502 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Poppins:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Permanent+Marker&family=Poppins:wght@400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #222e3e;
+    color: #D1E6FF;
+    font-family: 'Poppins', sans-serif;
+}
+
+.menu-toggle {
+    display: none;
+    color: #D1E6FF;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+nav.active .menu-toggle {
+    color: #D1E6FF;
+}
+
+.home {
+    height: 25px;
+    width: auto;
+    background-color: #D1E6FF;
+    border-radius: 5px;
+    padding-right: 8px;
+    padding-left: 8px;
+    border: 0px solid #D1E6FF;
+    box-shadow: 0px 0px 10px 0.85px rgba(255, 255, 255, 0.5);
+    display: none;
+    z-index: 1;
+    position: absolute;
+    font-weight: bold;
+}
+
+nav {
+    background-color: #001229;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    opacity: 1;
+    transform: none;
+    backdrop-filter: blur(2rem);
+    z-index: 100;
+    height: 5rem;
+    opacity: 0;
+    animation: slideRight 3s ease-in-out forwards;
+    animation-delay: 0.5s;
+}
+
+@keyframes slideRight {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    list-style: none;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #D1E6FF;
+    animation: slideTop .5s ease forwaeds infinite;
+    animation-delay: 0.5s;
+}
+
+@keyframes slideTop {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+nav ul li a:hover {
+    font-size: 1.01rem;
+    color: rgb(236, 231, 231);
+}
+
+main hr {
+    border: 0;
+    background: #9c97f1;
+    height: 1.2px;
+    margin: 100px 84px;
+}
+
+.left {
+    font-size: 2.5rem;
+    font-family: 'Caveat Brush', cursive;
+    display: flex;
+    align-items: center;
+}
+
+.left span{
+    font-family: "Dancing Script", cursive;
+    font-weight: bold;
+    color: blue;
+}
+
+.logo {
+    height: 2.5rem; 
+    width: auto;
+    margin-right: 10px;
+}
+
+/* home */
+
+.firstSection {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #D1E6FF; 
+}
+
+.firstSection::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('./assets/sar.png') no-repeat center center/cover;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.firstSection .overlay {
+    padding: 40px;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.firstSection h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.firstSection p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    line-height: 1.5;
+    margin: 0 auto;
+}
+
+
+/* Overview */
+
+#overview {
+    background-color: #222e3e;
+    color: #D1E6FF;
+    padding: 40px 20px;
+}
+
+.about-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    background-color: rgba(30, 32, 41, 0.9);
+}
+
+h1.about-naming {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* h2 {
+    font-size: 1.8rem;
+    margin-top: 20px;
+    color: #ff7159; 
+} */
+
+.problem-statement, .solution-overview, .use-cases {
+    margin: 20px 0;
+    padding: 15px;
+    border-left: 5px solid #ff7159;
+    background-color: rgba(255, 113, 89, 0.1);
+}
+
+.about-content {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about-content ul li {
+    margin: 10px 0;
+}
+
+.about-content button {
+    background-color: #ff7159; 
+    color: #D1E6FF; 
+    border: none; 
+    padding: 10px 20px; 
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.about-content button:hover {
+    background-color: #ff5733;
+}
+
+
+/* team */
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    margin: auto;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.container h3 {
+    color: #ff7159;
+}
+
+.container h1 {
+    font-size: 70px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0;
+    /* margin-bottom: 30px; */
+    color: #D1E6FF;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    padding-top: 20px;
+    gap: 20px;
+}
+
+.row .box {
+    width: 280px; 
+    height: auto; 
+    background-color: #1e2029;
+    border-radius: 10px;
+    padding: 20px; 
+    margin: 10px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.row .box:hover {
+    transform: translateY(-10px);
+}
+
+.row .box img {
+    width: 80px;
+    border-radius: 50%;
+    margin-top: 10px;
+}
+
+.row .box h2 {
+    padding-top: 15px;
+    font-size: 20px;
+}
+
+.row .box h4 {
+    padding-top: 10px;
+    color: grey;
+    font-size: 17px;
+}
+
+.row .box h5 {
+    padding-top: 10px;
+    font-size: 14px;
+    color: grey;
+}
+
+.row .box h6 {
+    font-size: 14px;
+    color: grey;
+}
+
+.row .box ion-icon {
+    margin-top: 15px;
+    font-size: 25px; 
+    margin: 10px 5px;
+    transition: color 0.5s;
+}
+
+.row .box ion-icon:hover {
+    color: #ff7159;
+}
+
+
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .row .box {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+}
+
+/* Work Area */
+
+#work-area {
+    display: flex;
+    padding: 20px;
+    background-color: rgba(36, 42, 61, 0.7);
+}
+
+.sidebar {
+    width: 30%;
+    padding: 20px;
+    background-color: #1e2029;
+    color: #D1E6FF;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.sidebar h2, .sidebar h3 {
+    color: white;
+}
+
+.sidebar p {
+    margin-bottom: 15px;
+}
+
+.sidebar ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+#upload-btn {
+    background-color: #5e6369;
+    color: #D1E6FF;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#submit-btn {
+    background-color: #5e6369;
+    color: #D1E6FF;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#submit-btn:hover {
+    color: #000000;
+    background-color: #b1bfd0;
+}
+
+#uploaded-image-container {
+    margin-top: 20px;
+}
+
+#uploaded-image {
+    max-width: 100%; 
+    border-radius: 10px;
+}
+
+#uploaded-image-container h4{
+    color: white;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #b1bfd0;
+    border-radius: 8px;
+    position: relative;
+}
+
+.icons {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
+.icons i {
+    margin-left: 15px;
+    font-size: 24px; 
+    cursor: pointer;
+    color: #5e6369;
+    transition: color 0.3s;
+}
+
+.icons i:hover {
+    color: darkgrey;
+}
+
+.generated-image {
+    text-align: center;
+    height: calc(100% - 50px);
+    overflow: hidden;
+    position: relative;
+}
+
+.generated-image img {
+    width: 100%;
+    height: 100%; 
+    object-fit: cover; 
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+#download-btn {
+    background-color: #5e6369; 
+    color: #D1E6FF; 
+    border: none; 
+    border-radius: 10px;
+    padding: 10px 20px; 
+    font-size: 16px; 
+    cursor: pointer; 
+    margin-left: 15px;
+    transition: background-color 0.3s ease;
+}
+
+#download-btn:hover {
+    color: #000000;
+    background-color: #b1bfd0;
+}
+
+/* footer */
+
+.last-text p {
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+    background: #001229;
+    font-weight: 300;
+    margin-top: 70px;
+}
+
+.top {
+    position: fixed;
+    bottom: 2.1rem;
+    right: 2.1rem;
+}
+
+.top i {
+    color: #000;
+    background: #5e6369;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 0.5rem;
+}
